@@ -30,7 +30,9 @@ Para cada tipo de dados há um layout diferente.
 ```
 
 # Dados de vendas
-● Os dados de vendas têm o formato id 003 . Dentro da linha de vendas, existe a lista de itens, que é envolto por colchetes []. A linha terá o seguinte formato.
+● Os dados de vendas têm o formato id 003.
+Dentro da linha de vendas, existe a lista de itens, que é envolto por colchetes []. 
+A linha terá o seguinte formato:
 
 ```sh
 003çSale IDç[Item ID-Item Quantity-Item Price]çSalesman name
@@ -70,6 +72,7 @@ Você tem total liberdade para utilizar google com o que você precisa.
 Sinta-se à vontade para escolher qualquer biblioteca externa se for necessário.
 
 # Critérios de Avaliação:
+
 ● Clean Code
 ● Simplicity
 ● Logic
