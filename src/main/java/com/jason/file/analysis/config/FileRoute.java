@@ -1,6 +1,6 @@
 package com.jason.file.analysis.config;
 
-import java.io.FileReader;
+import java.io.InputStream;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
@@ -15,10 +15,13 @@ public class FileRoute extends RouteBuilder {
 	public void configure() throws Exception {
 
 		from("{{route.from}}")
-			.convertBodyTo(FileReader.class)
+			.filter()
+			.simple("${file:ext} == 'dat'")
+			.convertBodyTo(InputStream.class)
 			.process(new FileProcessor())
 			.process(new ReportProcessor())
-			.to("{{route.to}}");
+			.convertBodyTo(String.class)
+			.to("{{route.to}}?fileName=${file:onlyname.noext}.done.${file:ext}");
 
 	}
 

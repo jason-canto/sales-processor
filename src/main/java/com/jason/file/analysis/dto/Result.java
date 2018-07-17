@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter @Setter @Builder
 public class Result {
 
-	List<Seller> seller;
+	List<Seller> sellers;
 
 	List<Client> clients;
 
